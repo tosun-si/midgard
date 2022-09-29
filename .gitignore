@@ -1,0 +1,5 @@
+.idea
+target
+*.iml
+**/avro/generated
+.DS_Store
