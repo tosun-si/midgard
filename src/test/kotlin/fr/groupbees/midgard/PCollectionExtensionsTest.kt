@@ -12,7 +12,6 @@ import org.junit.experimental.categories.Category
 import org.junit.runner.RunWith
 import java.io.Serializable
 
-
 @RunWith(JUnitParamsRunner::class)
 class PCollectionExtensionsTest : Serializable {
 
