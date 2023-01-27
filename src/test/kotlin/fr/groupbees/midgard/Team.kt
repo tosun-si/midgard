@@ -3,8 +3,7 @@ package fr.groupbees.midgard
 import java.io.Serializable
 
 data class Team(
-    val firstName: String,
-    val lastName: String,
-    val age: Int,
-    val nickname: String = ""
+    val name: String,
+    val slogan: String,
+    val players: List<Player>
 ) : Serializable
