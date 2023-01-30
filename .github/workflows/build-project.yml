@@ -5,9 +5,9 @@ name: Build project and check quality
 
 on:
   push:
-    branches: [ master, feature/* ]
+    branches: [ main, feature/* ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
