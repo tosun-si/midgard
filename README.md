@@ -7,6 +7,35 @@ The goal of this project is to propose some extensions on `Beam` `PCollection` `
 Behind the scene `Kotlin` extensions are used, the main advantage of this technic is adding behaviours and methods to 
 an existing structure without affecting it.
 
+## Versions compatibility between Beam and Midgard
+
+| Midgard | Beam   |
+|---------|--------|
+| 0.15.0  | 2.44.0 |
+
+## Installation of project
+
+The project is hosted on Maven repository.\
+You can install it with all the build tools compatibles with Maven.
+
+Example with Maven and Gradle :
+
+#### Maven
+
+```xml
+<dependency>
+    <groupId>fr.groupbees</groupId>
+    <artifactId>midgard</artifactId>
+    <version>0.15.0</version>
+</dependency>
+```
+
+#### Gradle
+
+```text
+implementation group: 'fr.groupbees', name: 'midgard', version: '0.15.0'
+```
+
 ## 1- Extensions on PCollection
 
 ### 1-1 Usual Beam operators : map, flatMap and filter
@@ -52,6 +81,8 @@ val resultPlayers: PCollection<Player> = pipeline
 The same pipeline with `Midgard` library : 
 
 ```kotlin
+import fr.groupbees.midgard.*
+
 val resultPlayersMidgard: PCollection<Player> = pipeline
     .apply("Create", Create.of(listOf(psgTeam, realTeam)))
     .map("To Team with Slogan V2") { it.copy(slogan = "${it.slogan} VERSION 2") }
@@ -63,6 +94,12 @@ For each operator, there is its equivalent with `Midgard` :
 - `MapElements` -> `map`
 - `FlatMapElements` -> `flatMap`
 - `Filter` -> `filter`
+
+To use extensions offered by `Midgard`, you have to add the following import in the code : 
+
+```
+import fr.groupbees.midgard.*
+```
 
 Another big advantage of using `Kotlin` extensions, is the possibility to mix native methods of the `PCollection` with those specific 
 to `Midgard`. The previous example contains : 

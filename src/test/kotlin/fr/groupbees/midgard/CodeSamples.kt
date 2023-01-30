@@ -2,19 +2,18 @@ package fr.groupbees.midgard
 
 import junitparams.JUnitParamsRunner
 import org.apache.beam.sdk.testing.TestPipeline
-import org.apache.beam.sdk.testing.ValidatesRunner
 import org.apache.beam.sdk.transforms.*
 import org.apache.beam.sdk.values.PCollection
 import org.apache.beam.sdk.values.PCollectionView
 import org.apache.beam.sdk.values.TypeDescriptor
+import org.junit.Ignore
 import org.junit.Rule
-import org.junit.Test
-import org.junit.experimental.categories.Category
 import org.junit.runner.RunWith
 import java.io.Serializable
 
 @RunWith(JUnitParamsRunner::class)
-class CodeExampleTest : Serializable {
+@Ignore
+class CodeSamples : Serializable {
 
     @Transient
     private val pipeline: TestPipeline = TestPipeline.create()
@@ -22,9 +21,7 @@ class CodeExampleTest : Serializable {
     @Rule
     fun pipeline(): TestPipeline = pipeline
 
-    @Test
-    @Category(ValidatesRunner::class)
-    fun testThreeOperator() {
+    fun codeExamples() {
         val psgPlayers = listOf(
             Player(firstName = "Kylian", lastName = "Mbappe", 24),
             Player(firstName = "Marco", lastName = "Verrati", 28)
@@ -88,9 +85,6 @@ class CodeExampleTest : Serializable {
                 teardownAction = { println("Teardown Action") }
             )
 
-        // Then.
-//        PAssert.that(resultPlayers).containsInAnyOrder(listOf(benzemaPlayer))
-
         val slogansSideInput: PCollectionView<String> = pipeline
             .apply("Read slogans", Create.of("VERSION 2"))
             .apply("Create as collection view", View.asSingleton())
@@ -117,8 +111,6 @@ class CodeExampleTest : Serializable {
                 finishBundleAction = { println("Finish Bundle Action") },
                 teardownAction = { println("Teardown Action") }
             )
-
-        pipeline.run().waitUntilFinish()
     }
 
     private fun toTeamWithSloganSuffixFromSideInput(
@@ -129,9 +121,5 @@ class CodeExampleTest : Serializable {
         val sloganSuffixSideInput: String = context.sideInput(sideInput)
 
         return currentTeam.copy(slogan = "${currentTeam.slogan} $sloganSuffixSideInput")
-    }
-
-    private fun addNickNameToPlayer(player: Player): Player {
-        return player.copy(nickname = "Kbenz")
     }
 }
