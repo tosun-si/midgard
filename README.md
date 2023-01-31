@@ -235,7 +235,7 @@ private fun toTeamWithSloganSuffixFromSideInput(
 ```
 
 We simulated a side input with a slogan suffix as a `PCollectionView`.\
-The `mapFnWithContext` method gives access to the current `DoFn` `ProcessContext`, that allows :
+The `mapFnWithContext` method gives access to the current `DoFn` `ProcessContext` and allows :
 - To retrieve the current `String` value inside the side input
 - To retrieve the current `Team` input element 
 
@@ -263,4 +263,9 @@ without side input :
 
 In this example, the current input element in the context is directly returned.
 
+### Next steps and evolutions
 
+The library could add in the future, extensions on native `Beam` IO like :
+- TextIO
+- BigQueryIO
+...
