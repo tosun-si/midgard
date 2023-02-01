@@ -1,8 +1,14 @@
 # Midgard
 
-This module is a `Beam` wrapper on `Kotlin`.
+![beam-kotlin](beam-kotlin.png)
 
-The goal of this project is to propose some extensions on `Beam` `PCollection` `DoFn` and `IO connectors`
+Because **Beam** ❤️ **Kotlin**, we created a new open source library called **Midgard** to :
+
+- Have more concise and expressive code
+- Remove **Beam** boilerplate code
+- Propose more **Functional Programming** style
+
+This module is a `Beam` wrapper on `Kotlin` and proposes some extensions on `PCollection` `DoFn` and `IO connectors`
 
 Behind the scene `Kotlin` extensions are used, the main advantage of this technic is adding behaviours and methods to 
 an existing structure without affecting it.
