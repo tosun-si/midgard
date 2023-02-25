@@ -18,6 +18,7 @@ an existing structure without affecting it.
 | Midgard | Beam   |
 |---------|--------|
 | 0.15.0  | 2.44.0 |
+| 0.16.0  | 2.45.0 |
 
 ## Installation of project
 
@@ -32,14 +33,14 @@ Example with Maven and Gradle :
 <dependency>
     <groupId>fr.groupbees</groupId>
     <artifactId>midgard</artifactId>
-    <version>0.15.0</version>
+    <version>0.16.0</version>
 </dependency>
 ```
 
 #### Gradle
 
 ```text
-implementation group: 'fr.groupbees', name: 'midgard', version: '0.15.0'
+implementation group: 'fr.groupbees', name: 'midgard', version: '0.16.0'
 ```
 
 ## 1- Extensions on PCollection
