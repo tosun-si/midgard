@@ -5,7 +5,6 @@ import org.apache.beam.sdk.transforms.*
 import org.apache.beam.sdk.values.PCollection
 import org.apache.beam.sdk.values.PCollectionView
 import org.apache.beam.sdk.values.TypeDescriptor
-import java.io.Serializable
 
 /**
  * Extension for a map operation on a [PCollection].
@@ -19,7 +18,7 @@ import java.io.Serializable
  * @param transform current transformation function
  * @return the [PCollection] instance after applying the given operation
  */
-inline fun <I, reified O : Serializable> PCollection<I>.map(
+inline fun <I, reified O> PCollection<I>.map(
     name: String = "map to ${O::class.simpleName}",
     transform: SerializableFunction<I, O>
 ): PCollection<O> {
@@ -38,7 +37,7 @@ inline fun <I, reified O : Serializable> PCollection<I>.map(
  * @param transform current transformation function
  * @return the [PCollection] instance after applying the given operation
  */
-inline fun <I, reified O : Serializable> PCollection<I>.flatMap(
+inline fun <I, reified O> PCollection<I>.flatMap(
     name: String = "flatMap to ${O::class.simpleName}",
     transform: SerializableFunction<I, Iterable<O>>
 ): PCollection<O> {
@@ -71,7 +70,7 @@ inline fun <I, reified O : Serializable> PCollection<I>.flatMap(
  * @param teardownAction teardown action function
  * @return the [PCollection] instance after applying the given operation
  */
-inline fun <I, reified O : Serializable> PCollection<I>.mapFn(
+inline fun <I, reified O> PCollection<I>.mapFn(
     name: String = "map to ${O::class.simpleName}",
     transform: SerializableFunction<I, O>,
     setupAction: SerializableAction = SerializableAction { },
@@ -117,7 +116,7 @@ inline fun <I, reified O : Serializable> PCollection<I>.mapFn(
  * @param teardownAction teardown action function
  * @return the [PCollection] instance after applying the given operation
  */
-inline fun <I, reified O : Serializable> PCollection<I>.flatMapFn(
+inline fun <I, reified O> PCollection<I>.flatMapFn(
     name: String = "flatMap to ${O::class.simpleName}",
     transform: SerializableFunction<I, Iterable<O>>,
     setupAction: SerializableAction = SerializableAction { },
@@ -183,7 +182,7 @@ inline fun <I, reified O : Serializable> PCollection<I>.flatMapFn(
  * @param sideInputs side inputs associated to this DoFn class
  * @return the [PCollection] instance after applying the given operation
  */
-inline fun <reified I, reified O : Serializable> PCollection<I>.mapFnWithContext(
+inline fun <reified I, reified O> PCollection<I>.mapFnWithContext(
     name: String = "map to ${O::class.simpleName}",
     transform: SerializableFunction<DoFn<I, O>.ProcessContext, O>,
     setupAction: SerializableAction = SerializableAction { },
@@ -253,7 +252,7 @@ inline fun <reified I, reified O : Serializable> PCollection<I>.mapFnWithContext
  * @param sideInputs side inputs associated to this DoFn class
  * @return the [PCollection] instance after applying the given operation
  */
-inline fun <reified I, reified O : Serializable> PCollection<I>.flatMapFnWithContext(
+inline fun <reified I, reified O> PCollection<I>.flatMapFnWithContext(
     name: String = "map to ${O::class.simpleName}",
     transform: SerializableFunction<DoFn<I, O>.ProcessContext, Iterable<O>>,
     setupAction: SerializableAction = SerializableAction { },

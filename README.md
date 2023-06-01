@@ -20,6 +20,7 @@ an existing structure without affecting it.
 | 0.15.0  | 2.44.0 |
 | 0.16.0  | 2.45.0 |
 | 0.17.0  | 2.46.0 |
+| 0.18.0  | 2.47.0 |
 
 ## Installation of project
 
@@ -226,6 +227,7 @@ val resultTeamMidgardMapContextLifeCycle: PCollection<Team> = pipeline
         name = "To Team with Slogan V2",
         transform = { context -> toTeamWithSloganSuffixFromSideInput(slogansSideInput, context) },
         setupAction = { println("Setup Action") },
+        sideInputs = listOf(slogansSideInput),
         startBundleAction = { println("Start Bundle Action") },
         finishBundleAction = { println("Finish Bundle Action") },
         teardownAction = { println("Teardown Action") }
