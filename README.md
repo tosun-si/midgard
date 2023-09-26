@@ -23,6 +23,7 @@ an existing structure without affecting it.
 | 0.18.0  | 2.47.0 |
 | 0.19.0  | 2.48.0 |
 | 0.20.0  | 2.49.0 |
+| 0.21.0  | 2.50.0 |
 
 ## Installation of project
 
@@ -37,14 +38,14 @@ Example with Maven and Gradle :
 <dependency>
     <groupId>fr.groupbees</groupId>
     <artifactId>midgard</artifactId>
-    <version>0.20.0</version>
+    <version>0.21.0</version>
 </dependency>
 ```
 
 #### Gradle
 
 ```text
-implementation group: 'fr.groupbees', name: 'midgard', version: '0.20.0'
+implementation group: 'fr.groupbees', name: 'midgard', version: '0.21.0'
 ```
 
 ## 1- Extensions on PCollection
