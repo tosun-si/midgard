@@ -26,6 +26,9 @@ an existing structure without affecting it.
 | 0.21.0  | 2.50.0 |
 | 0.22.0  | 2.51.0 |
 | 0.23.0  | 2.52.0 |
+| 0.24.0  | 2.53.0 |
+
+> :warning: **The current Kotlin version used with Midgard is : 1.9.22**
 
 ## Installation of project
 
