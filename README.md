@@ -29,6 +29,7 @@ an existing structure without affecting it.
 | 0.24.0  | 2.53.0 |
 | 0.25.0  | 2.54.0 |
 | 0.26.0  | 2.55.0 |
+| 0.27.0  | 2.56.0 |
 
 > :warning: **The current Kotlin version used with Midgard is : 1.9.22**
 
@@ -45,14 +46,14 @@ Example with Maven and Gradle :
 <dependency>
     <groupId>fr.groupbees</groupId>
     <artifactId>midgard</artifactId>
-    <version>0.25.0</version>
+    <version>0.27.0</version>
 </dependency>
 ```
 
 #### Gradle
 
 ```text
-implementation group: 'fr.groupbees', name: 'midgard', version: '0.25.0'
+implementation group: 'fr.groupbees', name: 'midgard', version: '0.27.0'
 ```
 
 ## 1- Extensions on PCollection
